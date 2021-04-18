@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora De Interpolación</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <center>
+        <div id= "centro">
+            <h1>Calculadora de Interpolación</h1>
+    <table border="1">
+        <tbody>
+            <tr><td><h2><center>Interpolación Lineal</center></h2></td><td><h2><center>Lagrange 1er. Orden</center></h2></td></tr>
+            <tr><td>
+                <table border="1">
+                    <tbody>
+                        <tr><td>Valor de x:</td><td><input type="text" id="xValue0" /> </td></tr>
+                        <tr><td>Valor de f(x):</td><td><input type="text" id="fxValue0" /> </td></tr>
+                        <tr><td>Valor de x0:</td><td><input type="text" id="x0Value0" /> </td></tr>
+                        <tr><td>Valor de f(x0):</td><td><input type="text" id="fx0Value0" /> </td></tr>
+                        <tr><td>Valor de x1:</td><td><input type="text" id="x1Value0" /> </td></tr>
+                        <tr><td>Valor de f(x1):</td><td><input type="text" id="fx1Value0" /> </td></tr>
+                        <tr><td>Interpolación:</td><td><output id= "lineal" ></output></td></tr>
+                        <tr><td>Error Verdadero:</td><td><output id= "errort"></output></td></tr>
+                        <tr><td><center><button onclick= "interpolacionLineal()" name="Button1"> Obtener </button></center></td>
+                            <td><center><button onclick= "clear0()" name="Button2"> Limpiar Valores</button></center></td></tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table border="1">
+                <tbody>
+                    <tr><td>Valor de x:</td><td><input type="text" id="xValue1" /> </td></tr>
+                    <tr><td>Valor de fx:</td><td><input type="text" id="fxValue1" /> </td></tr>
+                    <tr><td>Valor de x0:</td><td><input type="text" id="x0Value1" /> </td></tr>
+                    <tr><td>Valor de f(x0):</td><td><input type="text" id="fx0Value1" /> </td></tr>
+                    <tr><td>Valor de x1:</td><td><input type="text" id="x1Value1" /> </td></tr>
+                    <tr><td>Valor de f(x1):</td><td><input type="text" id="fx1Value1" /> </td></tr>
+                    <tr><td>Interpolación:</td><td><output id= "primerorden"></output></td></tr>
+                    <tr><td>Error Verdadero:</td><td><output id= "errort1"></output></td></tr>
+                    <tr><td><center><button onclick= "lagrangePrimerOrden()" name="Button3"> Obtener </button></center></td>
+                        <td><center><button onclick= "clear1()" name="Button4"> Limpiar Valores </button></center></td></tr>
+                </tbody>
+            </table>
+            </td>
+            </tr>
+            <tr><td><h2><center>Interpolación Cuadratica</center></h2></td><td><h2><center> Lagrange 2ndo. Orden</center></h2></td></tr>
+            <tr>
+                <td>
+                    <table border="1">
+                        <tbody>
+                            <tr><td>Valor de x:</td><td><input type="text" id="xValue2" /> </td></tr>
+                            <tr><td>Valor de fx:</td><td><input type="text" id="fxValue2" /> </td></tr>
+                            <tr><td>Valor de x0:</td><td><input type="text" id="x0Value2" /> </td></tr>
+                            <tr><td>Valor de f(x0):</td><td><input type="text" id="fx0Value2" /> </td></tr>
+                            <tr><td>Valor de x1:</td><td><input type="text" id="x1Value2" /> </td></tr>
+                            <tr><td>Valor de f(x1):</td><td><input type="text" id="fx1Value2" /> </td></tr>
+                            <tr><td>Valor de x2:</td><td><input type="text" id="x2Value2" /> </td></tr>
+                            <tr><td>Valor de f(x2):</td><td><input type="text" id="fx2Value2" /> </td></tr>
+                            <tr><td>Interpolación:</td><td><output id= "cuadratica"></output></td></tr>
+                            <tr><td>Error Verdadero:</td><td><output id= "errort2"></output></td></tr>
+                            <tr><td><center><button onclick= "interpolacionCuadratica()" name="Button5"> Obtener </button></center></td>
+                                <td><center><button onclick= "clear2()" name="Button6"> Limpiar Valores </button></center></td></tr>
+                        </tbody>
+                    </table> 
+                </td>
+                <td>
+                    <table border="1">
+                        <tbody>
+                            <tr><td>Valor de x:</td><td><input type="text" id="xValue3" /> </td></tr>
+                            <tr><td>Valor de fx:</td><td><input type="text" id="fxValue3" /> </td></tr>
+                            <tr><td>Valor de x0:</td><td><input type="text" id="x0Value3" /> </td></tr>
+                            <tr><td>Valor de f(x0):</td><td><input type="text" id="fx0Value3" /> </td></tr>
+                            <tr><td>Valor de x1:</td><td><input type="text" id="x1Value3" /> </td></tr>
+                            <tr><td>Valor de f(x1):</td><td><input type="text" id="fx1Value3" /> </td></tr>
+                            <tr><td>Valor de x2:</td><td><input type="text" id="x2Value3" /> </td></tr>
+                            <tr><td>Valor de f(x2):</td><td><input type="text" id="fx2Value3" /> </td></tr>
+                            <tr><td>Interpolación:</td><td><output id= "segundoorden"></output></td></tr>
+                            <tr><td>Error Verdadero:</td><td><output id= "errort3"></output></td></tr>
+                            <tr><td><center><button onclick= "lagrangeSegundoOrden()" name="Button7"> Obtener </button></center></td>
+                                <td><center><button onclick= "clear3()" name="Button8"> Limpiar Valores</button></center></td></tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</center>
+<script type="application/javascript" src="main.js"></script>
+</body>
+</html>
