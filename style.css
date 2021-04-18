@@ -1,14 +1,14 @@
 body {
     margin: 0%;
-    background-color: aqua;
+    background-color: lightcoral;
 }
 
 button{
     background: transparent;
     color: black;
-    border-color: skyblue;
+    border-color: blueviolet;
 }
 
 table{
-    background: cornsilk;
+    background: lightcyan;
 }

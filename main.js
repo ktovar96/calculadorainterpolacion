@@ -8,13 +8,14 @@ function interpolacionLineal(){
     let div = (fx1 - fx0)/(x1 - x0);
     let mul = div * (x-x0);
     let resultado = fx0 + mul;
-    let et= resultado -fx;
+    let et= fx - resultado;
     if (fx != ""){
         document.getElementById("errort").innerHTML = et;
     } else{
-
         document.getElementById("errort").innerHTML = " ";
     }
+    let erroraprox= (et/fx)*100;
+    document.getElementById("errora").innerHTML = erroraprox.toFixed(2)+ "%";
     document.getElementById("lineal").innerHTML =resultado;   
 }
 
@@ -26,12 +27,14 @@ function lagrangePrimerOrden(){
     let x1= parseFloat(document.getElementById("x1Value1").value);
     let fx1= parseFloat(document.getElementById("fx1Value1").value);
     let resultado= (((x-x1) / (x0 - x1)) * fx0) + (((x - x0) / (x1 - x0)) * fx1);
-    let et= resultado - fx;
+    let et= fx - resultado;
     if (fx != ""){
     document.getElementById("errort1").innerHTML = et;
     } else {
         document.getElementById("errort1").innerHTML = "";
     }
+    let erroraprox= (et/fx)*100;
+    document.getElementById("errora1").innerHTML = erroraprox.toFixed(2) + "%";
     document.getElementById("primerorden").innerHTML =resultado;
 }
 
@@ -45,17 +48,21 @@ function interpolacionCuadratica(){
     let x2= parseFloat(document.getElementById("x2Value2").value);
     let fx2= parseFloat(document.getElementById("fx2Value2").value);
     let b1= ((fx1 -fx0)/(x1-x0));
-    let b2= ((fx2 -fx1)/(x2 -x1)) - ((fx1 -fx0)/(x1 -x0)) / (x2 - x0);
+    let div= (fx2 -fx1)/(x2 -x1);
+    let div2= (fx1 -fx0)/(x1 -x0);
+    let b2= (div - div2) / (x2 - x0);
     let mult1= b1*(x-x0);
     let mult2= b2*((x-x0) * (x-x1));
     let resultado= fx0 + mult1 + mult2;
-    let et= resultado - fx;
+    let et= fx - resultado;
     if (fx != ""){
         document.getElementById("errort2").innerHTML = et;
         }  else {
         document.getElementById("errort2").innerHTML = "";
         }
-        document.getElementById("cuadratica").innerHTML =resultado;
+    let eaprox= (et/fx)*100;
+    document.getElementById("errora2").innerHTML = eaprox.toFixed(2) + "%";
+    document.getElementById("cuadratica").innerHTML = resultado;
 }
 
 function lagrangeSegundoOrden(){
@@ -77,12 +84,14 @@ function lagrangeSegundoOrden(){
     let div6= (x-x1)/(x2-x1);
     let mult3= (div5 * div6) * fx2;
     let resultado = mult1 + mult2 + mult3;
-    let et= resultado - fx;
+    let et= fx - resultado;
     if (fx != ""){
         document.getElementById("errort3").innerHTML = et;
         }  else {
          document.getElementById("errort3").innerHTML = "";
         }
+    let erroraprox= (et/fx)*100;
+    document.getElementById("errora3").innerHTML = erroraprox.toFixed(2) + "%";
     document.getElementById("segundoorden").innerHTML = resultado;
 }
 
